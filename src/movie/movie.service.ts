@@ -90,8 +90,8 @@ export class MovieService {
         const defaultValue:CreateMovieDto = {
             actors: [],
             bigPoster: '',
-            description: '',
             genres: [],
+            description: '',
             poster: '',
             title: '',
             slug: '',
@@ -130,7 +130,7 @@ export class MovieService {
         if(process.env.NODE_ENV !== 'development')
             await this.telegramService.sendPhoto(dto.poster)
 
-        const msg = `<b>${dto.title}</b>\n\n` + `${dto.description}\n\n`
+        const msg = `<b>${dto.title}</b>\n\n`
 
         await this.telegramService.sendMessage(msg, {
             reply_markup: {
