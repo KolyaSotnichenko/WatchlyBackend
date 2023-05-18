@@ -127,8 +127,8 @@ export class MovieService {
     }
 
     async sendNotification(dto: CreateMovieDto){
-        // if(process.env.NODE_ENV !== 'development')
-        //     await this.telegramService.sendPhoto(dto.poster)
+        if(process.env.NODE_ENV !== 'development')
+            await this.telegramService.sendPhoto(`https://watchlybackend-production.up.railway.app${dto.poster}`)
 
         const msg = `<b>${dto.title}</b>\n\n`
 
@@ -137,7 +137,7 @@ export class MovieService {
                 inline_keyboard: [
                     [
                         {
-                            url: 'https://www.dudeplex.space/',
+                            url: `https://watchly-front-end.vercel.app/movie/${dto.slug}`,
                             text: 'Go to watch!'
                         }
                     ]
