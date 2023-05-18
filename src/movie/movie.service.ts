@@ -95,7 +95,8 @@ export class MovieService {
             poster: '',
             title: '',
             slug: '',
-            videoUrl: ''
+            videoUrl: '',
+            subtitles: ''
         }
 
         const movie = await this.MovieModel.create(defaultValue)

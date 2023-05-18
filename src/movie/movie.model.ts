@@ -44,6 +44,9 @@ export class MovieModel extends TimeStamps {
     @prop()
     videoUrl: string
 
+    @prop()
+    subtitles: string
+
     @prop({ref: () => GenreModel})
     genres: Ref<GenreModel>[]
 

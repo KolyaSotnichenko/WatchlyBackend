@@ -33,6 +33,9 @@ export class CreateMovieDto {
     @IsString()
     videoUrl: string
 
+    @IsString()
+    subtitles: string
+
     @IsArray()
     @IsString({each: true})
     genres: string[]
